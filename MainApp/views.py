@@ -43,11 +43,10 @@ def about(request):
 
 def item_detail(request,id):
 
-    #for item in items:
-     #       if item['id']==id:
     context ={
-        "itemtoreturn":"apple"
+        "itemtoreturn":items[id]
             }
+   
               
     return render(request,"item.html",context)
     
