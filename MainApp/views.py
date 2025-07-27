@@ -43,19 +43,14 @@ def about(request):
 
 def item_detail(request,id):
 
-    for item in items:
-            if item['id']==id:
-                 result = f"""
-        <h2> имя: {item["name"]}</h2>
-        <p>количество: {item["quantity"]}</p>
-
-        <p><a href="/getallitems">Назад к списку товаров</a></p>
-       
-                 """
-                 return HttpResponse(result)
-
-    return HttpResponseNotFound('<p> Item not found with id {0}</p>'.format(id))
-
+    #for item in items:
+     #       if item['id']==id:
+    context ={
+        "itemtoreturn":"apple"
+            }
+              
+    return render(request,"item.html",context)
+    
 def getallitems(request):
     result ="<h1> список товаров</h1><ol>"
     for item in items:
