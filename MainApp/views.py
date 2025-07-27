@@ -10,15 +10,23 @@ items = [
 ]
 
 
-def home(request):
+#def home(request)
  #   text = """
   #  <h1>"Изучаем django"</h1>
 #<strong>Автор</strong>: <i>Луганцев М.В.</i>
  #   """
   #  return HttpResponse(text)
 
-    template = "index.html" 
-    return render(request,template)
+ ##  return render(request,template)
+
+def home(request) -> HttpResponse:
+    context = { 
+    "name": "Ivanov Ivan Ivanovich",
+    "email": "ivanov@mail.ru"
+    }
+    return render(request,"index.html",context)
+
+
 
 # Create your views he
 
