@@ -24,4 +24,6 @@ urlpatterns = [
     path("",views.home),
     path("about",views.about),
     path("item/<int:id>",views.item_detail),
+    path("getallitems",views.getallitems),
+    
 ]

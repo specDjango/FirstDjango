@@ -37,7 +37,18 @@ def item_detail(request,id):
                  result = f"""
         <h2> имя: {item["name"]}</h2>
         <p>количество: {item["quantity"]}</p>
+
+        <p><a href="/getallitems">Назад к списку товаров</a></p>
+       
                  """
                  return HttpResponse(result)
 
     return HttpResponseNotFound('<p> Item not found with id {0}</p>'.format(id))
+
+def getallitems(request):
+    result ="<h1> список товаров</h1><ol>"
+    for item in items:
+            result +=f""" <li><a href='/item/{item["id"]}'> {item["name"]} </a></li>"""
+    result +="</ol"
+
+    return HttpResponse(result)
