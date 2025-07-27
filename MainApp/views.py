@@ -11,13 +11,16 @@ items = [
 
 
 def home(request):
-    text = """
-    <h1>"Изучаем django"</h1>
-<strong>Автор</strong>: <i>Луганцев М.В.</i>
+ #   text = """
+  #  <h1>"Изучаем django"</h1>
+#<strong>Автор</strong>: <i>Луганцев М.В.</i>
+ #   """
+  #  return HttpResponse(text)
 
-    """
-    return HttpResponse(text)
-# Create your views here.
+    template = "index.html" 
+    return render(request,template)
+
+# Create your views he
 
 def about(request):
     text ="""
