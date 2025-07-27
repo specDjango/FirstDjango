@@ -1,5 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
+
+items = [
+{"id": 1, "name": "Кроссовки abibas" ,"quantity":5},
+{"id": 2, "name": "Куртка кожаная" ,"quantity":2},
+{"id": 5, "name": "Coca-cola 1 литр" ,"quantity":12},
+{"id": 7, "name": "Картофель фри" ,"quantity":0},
+{"id": 8, "name": "Кепка" ,"quantity":124},
+]
 
 
 def home(request):
@@ -23,4 +31,13 @@ def about(request):
     return HttpResponse(text)
 
 def item_detail(request,id):
-    return HttpResponse('<p> Item with id {0}</p>'.format(id))
+
+    for item in items:
+            if item['id']==id:
+                 result = f"""
+        <h2> имя: {item["name"]}</h2>
+        <p>количество: {item["quantity"]}</p>
+                 """
+                 return HttpResponse(result)
+
+    return HttpResponseNotFound('<p> Item not found with id {0}</p>'.format(id))
