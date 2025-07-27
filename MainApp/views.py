@@ -56,4 +56,6 @@ def getallitems(request):
             result +=f""" <li><a href='/item/{item["id"]}'> {item["name"]} </a></li>"""
     result +="</ol"
 
-    return HttpResponse(result)
+    context ={"products": items}
+    
+    return render(request,"allproducts.html",context)
