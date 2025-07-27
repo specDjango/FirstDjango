@@ -2,11 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 
 items = [
-{"id": 1, "name": "Кроссовки abibas" ,"quantity":5},
-{"id": 2, "name": "Куртка кожаная" ,"quantity":2},
-{"id": 5, "name": "Coca-cola 1 литр" ,"quantity":12},
-{"id": 7, "name": "Картофель фри" ,"quantity":0},
-{"id": 8, "name": "Кепка" ,"quantity":124},
+{"id": 0, "name": "Кроссовки abibas" ,"quantity":5},
+{"id": 1, "name": "Куртка кожаная" ,"quantity":2},
+{"id": 2, "name": "Coca-cola 1 литр" ,"quantity":12},
+{"id": 3, "name": "Картофель фри" ,"quantity":0},
+{"id": 4, "name": "Кепка" ,"quantity":124},
 ]
 
 
@@ -42,12 +42,7 @@ def about(request):
     return HttpResponse(text)
 
 def item_detail(request,id):
-
-    context ={
-        "itemtoreturn":items[id]
-            }
-   
-              
+    context ={"itemtoreturn":items[id]}
     return render(request,"item.html",context)
     
 def getallitems(request):
