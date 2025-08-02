@@ -33,10 +33,10 @@ def home(request) -> HttpResponse:
 def about(request):
     text ="""
 <br>Имя: <b>Максим</b></br>
-<br>фамилия: <b>Луганцев</b>
+<br>фамилия: <b>Скрыто</b>
 <br>Отчество: <b>Викторович</b>
-<br>Телефон: <b>89150511104</b>
-<br>e-mail: <b>maxim.lugantsev@mail.ru</b>
+<br>Телефон: <b>8*15******04</b>
+<br>e-mail: <b>mlugants@mail.ru</b>
 
     """
     return HttpResponse(text)
