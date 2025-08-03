@@ -32,11 +32,20 @@ def home(request) -> HttpResponse:
 
 def about(request):
     text ="""
+
+      <header>
+        <a href="/"> Home </a> <br>
+        <a href="/getallitems"> Список товаров</a><br>
+        <a href="/about">About</a>
+    </header>
+
 <br>Имя: <b>Максим</b></br>
 <br>фамилия: <b>Скрыто</b>
 <br>Отчество: <b>Викторович</b>
 <br>Телефон: <b>8*15******04</b>
 <br>e-mail: <b>mlugants@mail.ru</b>
+
+
 
     """
     return HttpResponse(text)

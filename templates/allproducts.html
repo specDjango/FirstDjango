@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+  <header>
+    <a href="/"> Home </a> <br>
+    <a href="/getallitems"> Список товаров</a><br>
+    <a href="/about">About</a>
+</header>
 <ol>
     {% for product in products %}
   <li> <a href="/item/{{product.id}}">  {{ product.name}} {{ product.quantity}} </a> </li>
